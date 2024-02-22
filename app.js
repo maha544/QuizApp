@@ -101,6 +101,14 @@ function displayResult() {
     }
 }
 
+function startAgain(){
+    indexValue = 0;
+    marks = 0;
+    result.style.display = "none";
+    displayQuiz.style.display = "block";
+    showQuestions();
+}
+
 
 
 
