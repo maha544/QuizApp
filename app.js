@@ -102,6 +102,9 @@ function displayResult() {
         if (nextButton) {
             nextButton.style.display = "none";
         }
+
+        //hide question numbers
+        currentQuestion.style.display = "none";
         
         //to calculate result
         var resultPercentage = calculateResult();
@@ -120,7 +123,8 @@ function startAgain(){
     result.style.display = "none";
     displayQuiz.style.display = "block";
     
-    // Show the questions and the buttons
+    // Show the questions,button and question numbers
+    currentQuestion.style.display = "inline";
     questionDisplay.style.display = "block";
     var buttons = options.getElementsByTagName('button');
     for (var i = 0; i < buttons.length; i++) {
