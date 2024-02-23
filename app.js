@@ -90,7 +90,20 @@ function displayResult() {
     if (result) {
         result.style.display = "block";
         displayQuiz.style.display = "none";
-
+        
+        //hide the questions and the button
+        questionDisplay.style.display = "none";
+        var buttons = options.getElementsByTagName('button');
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].style.display = "none";
+        }
+        //hide the "Next" button
+        var nextButton = document.getElementById("nextButton");
+        if (nextButton) {
+            nextButton.style.display = "none";
+        }
+        
+        //to calculate result
         var resultPercentage = calculateResult();
         console.log("Result Percentage:", resultPercentage);
         var percentageElement = document.getElementById("percentage");
@@ -106,6 +119,13 @@ function startAgain(){
     marks = 0;
     result.style.display = "none";
     displayQuiz.style.display = "block";
+    
+    // Show the questions and the buttons
+    questionDisplay.style.display = "block";
+    var buttons = options.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = "block";
+    }
     showQuestions();
 }
 
